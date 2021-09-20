@@ -5,6 +5,16 @@ variable "app_name" {
   default = "sample-app"
 }
 
+variable "web_quantity" {
+  description = "The number of the web quantity."
+  default = 1
+}
+
+variable "worker_quantity" {
+  description = "The number of the worker quantity."
+  default = 1
+}
+
 resource "heroku_app" "app" {
   name = "${var.app_name}"
   region = "us"
@@ -43,12 +53,12 @@ resource "heroku_addon" "redis" {
 #   app = heroku_app.app.name
 #   type = "web"
 #   size = "hobby"
-#   quantity = 1
+#   quantity = "${var.web_quantity}"
 # }
 #
 # resource "heroku_formation" "worker" {
 #   app = heroku_app.app.name
 #   type = "worker"
 #   size = "hobby"
-#   quantity = 1
+#   quantity = "${var.worker_quantity}"
 # }
