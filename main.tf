@@ -16,7 +16,7 @@ variable "worker_quantity" {
 }
 
 resource "heroku_app" "app" {
-  name = "${var.app_name}"
+  name = var.app_name
   region = "us"
   # (Optional) not necessary if you are only using assets precompile.used only assets:precompile
   buildpacks = ["heroku/nodejs", "heroku/ruby"]
@@ -30,12 +30,12 @@ resource "heroku_app" "app" {
 }
 
 resource "heroku_addon" "database" {
-  app = "${heroku_app.app.name}"
+  app = heroku_app.app.name
   plan = "heroku-postgresql:hobby-dev"
 }
 
 resource "heroku_addon" "redis" {
-  app = "${heroku_app.app.name}"
+  app = heroku_app.app.name
   plan = "heroku-redis:hobby-dev"
 }
 
@@ -53,12 +53,12 @@ resource "heroku_addon" "redis" {
 #   app = heroku_app.app.name
 #   type = "web"
 #   size = "hobby"
-#   quantity = "${var.web_quantity}"
+#   quantity = var.web_quantity
 # }
 #
 # resource "heroku_formation" "worker" {
 #   app = heroku_app.app.name
 #   type = "worker"
 #   size = "hobby"
-#   quantity = "${var.worker_quantity}"
+#   quantity = var.worker_quantity
 # }
