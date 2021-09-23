@@ -1,10 +1,3 @@
-provider "heroku" {}
-
-variable "app_name" {
-  description = "The name of the application."
-  default = "sample-app"
-}
-
 variable "web_quantity" {
   description = "The number of the web quantity."
   default = 1
@@ -13,30 +6,6 @@ variable "web_quantity" {
 variable "worker_quantity" {
   description = "The number of the worker quantity."
   default = 1
-}
-
-resource "heroku_app" "app" {
-  name = var.app_name
-  region = "us"
-  # (Optional) not necessary if you are only using assets precompile.used only assets:precompile
-  buildpacks = ["heroku/nodejs", "heroku/ruby"]
-  # (Optional) enviroment variables.
-  # config_vars = {
-  #   FOOBAR = "baz"
-  # }
-  # sensitive_config_vars = {
-  #   SENSITIVE_FOO_BAR = "baz"
-  # }
-}
-
-resource "heroku_addon" "database" {
-  app = heroku_app.app.name
-  plan = "heroku-postgresql:hobby-dev"
-}
-
-resource "heroku_addon" "redis" {
-  app = heroku_app.app.name
-  plan = "heroku-redis:hobby-dev"
 }
 
 # =========================
