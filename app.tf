@@ -17,4 +17,8 @@ resource "heroku_app" "app" {
   # sensitive_config_vars = {
   #   SENSITIVE_FOO_BAR = "baz"
   # }
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
