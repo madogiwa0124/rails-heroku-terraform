@@ -1,5 +1,8 @@
 # Rails Heroku Terraform
 
+[![Terraform](https://img.shields.io/badge/terraform-v0.12.31-blue.svg)](https://www.terraform.io/)
+[![Terraform Provider Heroku](https://img.shields.io/badge/heroku_provider-v4.6.0-blue.svg)](https://github.com/heroku/terraform-provider-heroku)
+
 This repository is the terraform template for running Rails on Heroku.
 
 ## 💻 Setup
