@@ -40,7 +40,14 @@ $ terraform apply current.tfplan
 
 ``` sh
 $ terraform validate
+$ terraform fmt -check
 $ tfsec .
+```
+
+**Format**
+
+```sh
+$ terraform fmt
 ```
 
 ## 📚 Documents

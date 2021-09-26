@@ -1,11 +1,11 @@
 variable "web_quantity" {
   description = "The number of the web quantity."
-  default = 1
+  default     = 1
 }
 
 variable "worker_quantity" {
   description = "The number of the worker quantity."
-  default = 1
+  default     = 1
 }
 
 # =========================

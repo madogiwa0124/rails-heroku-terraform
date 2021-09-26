@@ -1,10 +1,10 @@
 variable "app_name" {
   description = "The name of the application."
-  default = "sample-app"
+  default     = "sample-app"
 }
 
 resource "heroku_app" "app" {
-  name = var.app_name
+  name   = var.app_name
   region = "us"
   # (Optional) not necessary if you are only using assets precompile.used only assets:precompile
   buildpacks = ["heroku/nodejs", "heroku/ruby"]
