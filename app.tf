@@ -1,5 +1,3 @@
-provider "heroku" {}
-
 variable "app_name" {
   description = "The name of the application."
   default = "sample-app"
