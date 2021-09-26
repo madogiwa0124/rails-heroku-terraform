@@ -10,6 +10,7 @@ Intall the following tools.
 |---|----|
 |[tfenv](https://github.com/tfutils/tfenv) | Allows you to install Terraform by specifying the version. |
 |[direnv](https://github.com/direnv/direnv) | Allows you to manage environment variables on a directory-by-directory basis.
+|[tfsec](https://github.com/aquasecurity/tfsec) | Security checker for tf files. |
 
 After install, add the following environment variables and then execute `direnv allow .`.
 
@@ -30,6 +31,13 @@ $ terraform plan -out=current.tfplan
 
 ``` sh
 $ terraform apply current.tfplan
+```
+
+**Lint**
+
+``` sh
+$ terraform validate
+$ tfsec .
 ```
 
 ## 📚 Documents
