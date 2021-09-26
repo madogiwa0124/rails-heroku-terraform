@@ -3,3 +3,4 @@
 current.tfplan
 terraform.tfstate
 terraform.tfstate.backup
+Brewfile.lock.json

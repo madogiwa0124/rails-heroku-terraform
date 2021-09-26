@@ -7,7 +7,7 @@ This repository is the terraform template for running Rails on Heroku.
 
 ## 💻 Setup
 
-Intall the following tools.
+Intall the following tools. You can install them all together with `brew bundle`.
 
 |name|description|
 |---|----|
