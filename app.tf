@@ -12,10 +12,11 @@ resource "heroku_app" "app" {
   region = "us"
   # (Optional) not necessary if you are only using assets precompile.used only assets:precompile
   buildpacks = ["heroku/nodejs", "heroku/ruby"]
-  # (Optional) enviroment variables.
-  # config_vars = {
-  #   FOOBAR = "baz"
-  # }
+  config_vars = {
+    RAILS_ENV                = "production"
+    RAILS_SERVE_STATIC_FILES = "enabled"
+    RAILS_LOG_TO_STDOUT      = "enabled"
+  }
   sensitive_config_vars = {
     RAILS_MASTER_KEY = "${var.rails_master_key}"
   }
