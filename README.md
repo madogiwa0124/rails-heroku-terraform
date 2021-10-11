@@ -20,6 +20,7 @@ After install, add the following environment variables and then execute `direnv 
 ``` sh
 export HEROKU_EMAIL="your heroku email"
 export HEROKU_API_KEY="your heroku api key"
+export TF_VAR_rails_master_key="your rails application master.key value."
 ```
 
 ## 🎮 Commands

@@ -3,6 +3,10 @@ variable "app_name" {
   default     = "sample-app"
 }
 
+variable "rails_master_key" {
+  description = "The master.key for your rails app credencials."
+}
+
 resource "heroku_app" "app" {
   name   = var.app_name
   region = "us"
@@ -12,9 +16,9 @@ resource "heroku_app" "app" {
   # config_vars = {
   #   FOOBAR = "baz"
   # }
-  # sensitive_config_vars = {
-  #   SENSITIVE_FOO_BAR = "baz"
-  # }
+  sensitive_config_vars = {
+    RAILS_MASTER_KEY = "${var.rails_master_key}"
+  }
 
   lifecycle {
     prevent_destroy = true
