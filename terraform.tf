@@ -1,3 +1,10 @@
 terraform {
-  required_version = "0.12.31"
+  required_version = "1.1.6"
+
+  required_providers {
+    heroku = {
+      source  = "heroku/heroku"
+      version = "5.0.1"
+    }
+  }
 }

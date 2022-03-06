@@ -1,6 +1,6 @@
 resource "heroku_addon" "database" {
-  app  = heroku_app.app.name
-  plan = "heroku-postgresql:hobby-dev"
+  app_id = heroku_app.app.id
+  plan   = "heroku-postgresql:hobby-dev"
 
   lifecycle {
     prevent_destroy = true
@@ -8,8 +8,8 @@ resource "heroku_addon" "database" {
 }
 
 resource "heroku_addon" "redis" {
-  app  = heroku_app.app.name
-  plan = "heroku-redis:hobby-dev"
+  app_id = heroku_app.app.id
+  plan   = "heroku-redis:hobby-dev"
 
   lifecycle {
     prevent_destroy = true
@@ -17,11 +17,11 @@ resource "heroku_addon" "redis" {
 }
 
 resource "heroku_addon" "papertrail" {
-  app  = heroku_app.app.name
-  plan = "papertrail:choklad"
+  app_id = heroku_app.app.id
+  plan   = "papertrail:choklad"
 }
 
 resource "heroku_addon" "scheduler" {
-  app  = heroku_app.app.name
-  plan = "scheduler:standard"
+  app_id = heroku_app.app.id
+  plan   = "scheduler:standard"
 }
